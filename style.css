@@ -9,7 +9,6 @@ body {
   line-height: 1.6;
 }
 
-/* Header Styles */
 header {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
@@ -25,7 +24,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 10%;
-  /* max-width: 1200px; */
+
   margin: 0 auto;
 }
 
@@ -35,6 +34,27 @@ nav {
   gap: 10px;
   font-weight: bold;
   color: #2c5530;
+}
+
+section.hero {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 90px;
+}
+
+.hero img {
+  width: 100%;
+  height: auto;
+  max-height: 60vh;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .hero img {
+    max-height: 40vh;
+  }
 }
 
 .logo-icon {
@@ -60,6 +80,7 @@ nav {
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s ease;
+  color: #000000;
 }
 
 .nav-links a:hover {
@@ -86,7 +107,6 @@ nav {
   background: #45a049;
 }
 
-/* About Section */
 .about {
   padding: 5rem 10%;
   margin: 0 auto;
@@ -131,6 +151,15 @@ nav {
   margin-left: 10px;
 }
 
+.about-circle {
+  width: 10px;
+  height: 10px;
+  background-color: #c4c4c4;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+}
+
 .about h2 {
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
@@ -156,22 +185,18 @@ nav {
 }
 
 .service-card {
-  width: 17.125rem; /* 274px / 16 = 17.125rem */
+  width: 17.125rem;
   height: 16.875rem;
   background: white;
   padding: 2rem;
   border-radius: 10px;
-  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 15px 8px 20px rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   flex-direction: column;
   transition: transform 0.3s ease;
-}
-
-.service-card:hover {
-  transform: translateY(70px);
 }
 
 .service-card h3 {
@@ -237,7 +262,7 @@ nav {
   background: white;
   align-content: center;
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.25);
-  border-radius: 20px;
+  border-radius: 12px;
 }
 
 .member-name {
@@ -277,15 +302,24 @@ nav {
 footer {
   background: rgba(27, 128, 54, 1);
   color: white;
-  padding: 3rem 5% 1rem;
+  padding: 3rem 3rem 1rem 3rem;
 }
 
 .footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(100px, 400px));
+  justify-content: end;
   gap: 2rem;
+}
+
+.footer-section {
+  max-width: 400px;
+  flex: 1;
+}
+
+.footer-section p {
+  margin-bottom: 0.5rem;
+  color: #f5f5f5;
 }
 
 .footer-section h3 {
@@ -295,10 +329,12 @@ footer {
 
 .footer-section ul {
   list-style: none;
+  color: #f5f5f5;
 }
 
 .footer-section ul li {
   margin-bottom: 0.5rem;
+  color: #f5f5f5;
 }
 
 .footer-section ul li a {
@@ -321,7 +357,6 @@ footer {
   display: inline-block;
   width: 40px;
   height: 40px;
-  background: #4caf50;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -337,14 +372,24 @@ footer {
 
 .footer-bottom {
   text-align: center;
-  margin-top: 2rem;
-  padding-top: 2rem;
   border-top: 1px solid #4caf50;
   color: #ffffff;
   font-size: 18px;
+  width: 100%;
+  padding-top: 1rem;
+  margin-top: 5rem;
 }
 
-/* Animations */
+.hero-content h1 {
+  font-size: 48px;
+  line-height: 1.2;
+}
+
+.hero-content p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -360,76 +405,13 @@ footer {
   animation: fadeInUp 1s ease-out;
 }
 
-/* Mobile Responsive */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
-
-  .hero h1 {
-    font-size: 2.5rem;
-  }
-
-  .hero p {
-    font-size: 1.1rem;
-  }
-
-  .about-content {
-    grid-template-columns: 1fr;
-    text-align: center;
-    flex-direction: column;
-  }
-
-  .services-grid {
-    grid-template-columns: 1fr;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .team-grid {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-
-  .team-card img {
-    margin-top: 32px !important;
-  }
-}
-
-section.hero {
-  position: relative; /* Обязательное условие */
-  width: 100%;
-  overflow: hidden;
-  padding-top: 90px;
-}
-
-section.hero img {
-  width: 100%;
-  height: 571px;
-  object-fit: cover;
-  display: block;
-}
-
 .hero-content {
   position: absolute;
   top: 70%;
-  left: 7%; /* Прижимаем к левой стороне с отступом */
+  left: 7%;
   transform: translateY(-50%);
   color: white;
   max-width: 700px;
-}
-
-.hero-content h1 {
-  font-size: 48px;
-  line-height: 1.2;
-}
-
-.hero-content p {
-  font-size: 1rem;
-  margin-bottom: 1.5rem;
 }
 
 .cta-btn {
@@ -482,9 +464,240 @@ section.hero img {
   font-weight: bold;
 }
 
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-container {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 500px;
+  padding: 30px;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-container {
+  transform: translateY(0);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.modal-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #7f8c8d;
+  transition: color 0.2s;
+}
+
+.modal-close:hover {
+  color: #e74c3c;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-label {
+  font-size: 14px;
+  color: #34495e;
+  font-weight: 500;
+}
+
+.form-input {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.form-input:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+  outline: none;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+  font-size: 16px;
+}
+
+.btn-cancel {
+  background-color: #f1f2f6;
+  color: #2f3640;
+}
+
+.btn-cancel:hover {
+  background-color: #dfe4ea;
+}
+
+.btn-save {
+  background-color: #3498db;
+  color: white;
+}
+
+.btn-save:hover {
+  background-color: #2980b9;
+}
+
+.btn-save:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+.loading {
+  position: relative;
+  pointer-events: none;
+}
+
+.loading::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-content p {
+    font-size: 0.8rem;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .team-card img {
+    margin-top: 32px !important;
+  }
+
+  .footer-bottom p {
+    font-size: 14px;
+  }
+
   .scroll-to-top {
     bottom: 100px;
-    right: 50px;
+    right: 20px;
+  }
+
+  .service-card:nth-child(4n + 1),
+  .service-card:nth-child(4n + 3) {
+    transform: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero img {
+    max-height: 40vh;
+  }
+  .hero-content h1 {
+    font-size: 0.8rem;
+    width: 200px;
+  }
+  .hero-content p {
+    font-size: 0.6rem;
+    width: 200px;
+  }
+  .cta-btn {
+    padding: 0.4rem 0.9rem;
+    font-size: 12px;
+  }
+}
+@media (max-width: 950px) {
+  .services-grid {
+    grid-template-columns: none;
+  }
+  .service-card:nth-child(4n + 1),
+  .service-card:nth-child(4n + 3) {
+    transform: none;
   }
 }
