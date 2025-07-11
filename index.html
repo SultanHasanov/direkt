@@ -8,13 +8,12 @@
     <link rel="icon" href="./assets/favicon.png" type="image/png" />
   </head>
   <body>
-    <!-- Header -->
     <div class="scroll-to-top" id="scrollToTop"></div>
     <header>
       <nav>
         <div class="logo">
           <div>
-            <img src="./assets/favicon.png" alt="" />
+            <img src="./assets/logo1.svg" alt="" />
           </div>
         </div>
         <ul class="nav-links">
@@ -28,9 +27,8 @@
       </nav>
     </header>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
-      <img src="./assets/group_3.png" alt="" />
+      <img src="./assets/group_3.png" alt="home image" />
       <div class="hero-content">
         <h1>Find The Perfect Digital Solution for your Business</h1>
         <p>Grow your business with our state of the art technology</p>
@@ -38,12 +36,11 @@
       </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="about">
       <div class="about-content">
         <div class="about-text">
           <div class="section-label">
-            <div class="circle"></div>
+            <div class="about-circle"></div>
             WHO WE DO
           </div>
           <h2>We Create Innovative Solutions for Industries</h2>
@@ -92,7 +89,6 @@
       </div>
     </section>
 
-    <!-- Team Section -->
     <section id="team" class="team">
       <div class="team-container">
         <div class="section-label">
@@ -112,7 +108,7 @@
             <div class="team-member">
               <div class="member-name">Ikotun Adejuigbe Emmanuel</div>
               <div class="member-role">CEO/MD</div>
-              <button class="social-btn">+</button>
+              <button class="social-btn edit-btn" data-id="1">+</button>
             </div>
           </div>
 
@@ -121,7 +117,7 @@
             <div class="team-member">
               <div class="member-name">Famodimu Olusegun</div>
               <div class="member-role">CFO</div>
-              <button class="social-btn">+</button>
+              <button class="social-btn edit-btn" data-id="2">+</button>
             </div>
           </div>
 
@@ -130,7 +126,7 @@
             <div class="team-member">
               <div class="member-name">Blessing Ehizojie-Philips</div>
               <div class="member-role">Project Manager</div>
-              <button class="social-btn">+</button>
+              <button class="social-btn edit-btn" data-id="3">+</button>
             </div>
           </div>
 
@@ -139,33 +135,36 @@
             <div class="team-member">
               <div class="member-name">Nanle Luke Precious</div>
               <div class="member-role">CTO</div>
-              <button class="social-btn">+</button>
+              <button class="social-btn edit-btn" data-id="4">+</button>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Footer -->
     <footer id="contact">
       <div class="footer-content">
         <div class="footer-section">
           <h3>About Us</h3>
-          <p>
-            Spatium Innovation Hub - Creating innovative digital solutions for
-            businesses worldwide.
-          </p>
+
           <div class="social-links">
-            <a href="#">T</a>
-            <a href="#">F</a>
-            <a href="#">I</a>
-            <a href="#">L</a>
+            <a href="#"><img src="./assets/twitter.png" alt="twitter" /></a>
+            <a href="#"><img src="./assets/facebook.png" alt="facebook" /></a>
+            <a href="#"><img src="./assets/instagram.png" alt="instagram" /></a>
+            <a href="#"><img src="./assets/linkedIn.png" alt="linkedIn" /></a>
           </div>
         </div>
         <div class="footer-section">
           <h3>Contact Us</h3>
-          <p><strong>Address:</strong> Global Plaza, Jabi, Abuja, Nigeria</p>
-          <p><strong>Email:</strong> spatiuminnovation@gmail.com</p>
+          <p>
+            <span style="color: #52fa43">Address:</span> Global Plaza, Jabi,
+            Abuja, Nigeria
+          </p>
+          <p><span style="color: #52fa43">Phone</span></p>
+          <p>
+            <span style="color: #52fa43">Email:</span>
+            spatiuminnovation@gmail.com
+          </p>
         </div>
         <div class="footer-section">
           <h3>Services</h3>
@@ -190,7 +189,34 @@
         <p>Copyright 2020. Spatium Innovation Hub. All Rights Reserved</p>
       </div>
     </footer>
-    <!-- Scroll to Top Button -->
+    <!-- модалка-->
+    <div class="modal-overlay" id="editModal">
+      <div class="modal-container">
+        <div class="modal-header">
+          <h3 class="modal-title">Edit Team Member</h3>
+          <button class="modal-close" id="modalClose">&times;</button>
+        </div>
+        <form class="modal-form" id="editForm">
+          <input type="hidden" id="memberId" />
+          <div class="form-group">
+            <label for="memberName" class="form-label">Name</label>
+            <input type="text" id="memberName" class="form-input" required />
+          </div>
+          <div class="form-group">
+            <label for="memberRole" class="form-label">Position</label>
+            <input type="text" id="memberRole" class="form-input" required />
+          </div>
+          <div class="modal-actions">
+            <button type="button" class="btn btn-cancel" id="cancelEdit">
+              Cancel
+            </button>
+            <button type="submit" class="btn btn-save" id="saveChanges">
+              Save
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
 
     <script src="./script.js"></script>
   </body>
