@@ -177,6 +177,7 @@ section.hero {
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
   width: min-content;
+  height: min-content;
 }
 
 .service-card:nth-child(4n + 1),
@@ -638,8 +639,26 @@ footer {
 
   .about-content {
     grid-template-columns: 1fr;
-    text-align: center;
     flex-direction: column;
+  }
+  .about-text {
+    padding-right: 0;
+  }
+  .about h2 {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+  }
+  .about-text > p:first-of-type {
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+  }
+
+  .about-text > p:nth-of-type(2) {
+    color: #99999a;
+    font-size: 15px;
+  }
+  .team h2 {
+    font-size: 2rem;
   }
 
   .services-grid {
